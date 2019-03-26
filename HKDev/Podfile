@@ -6,6 +6,7 @@ target 'HKDev' do
   # use_frameworks!
 
   # Pods for HKDev
+  pod 'Masonry'
 
   target 'HKDevTests' do
     inherit! :search_paths
