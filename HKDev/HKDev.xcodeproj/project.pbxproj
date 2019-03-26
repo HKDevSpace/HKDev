@@ -16,6 +16,13 @@
 		460EE79B224A0F1A0076FBD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE79A224A0F1A0076FBD4 /* main.m */; };
 		460EE7A5224A0F1A0076FBD4 /* HKDevTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7A4224A0F1A0076FBD4 /* HKDevTests.m */; };
 		460EE7B0224A0F1A0076FBD4 /* HKDevUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7AF224A0F1A0076FBD4 /* HKDevUITests.m */; };
+		460EE7C7224A147D0076FBD4 /* HKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7C2224A147D0076FBD4 /* HKTabBarController.m */; };
+		460EE7C8224A147D0076FBD4 /* HKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7C3224A147D0076FBD4 /* HKViewController.m */; };
+		460EE7C9224A147D0076FBD4 /* HKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7C6224A147D0076FBD4 /* HKNavigationController.m */; };
+		460EE7CF224A17FC0076FBD4 /* HKVideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7CB224A17FC0076FBD4 /* HKVideoListViewController.m */; };
+		460EE7D0224A17FC0076FBD4 /* HKPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7CD224A17FC0076FBD4 /* HKPlayerViewController.m */; };
+		460EE7D6224A18080076FBD4 /* HKRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7D2224A18080076FBD4 /* HKRecorderViewController.m */; };
+		460EE7D7224A18080076FBD4 /* HKPrepareRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460EE7D3224A18080076FBD4 /* HKPrepareRecordViewController.m */; };
 		4FC19FAA1AB32620A6FAB3CC /* libPods-HKDevUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD00E75689F181048CC0E58A /* libPods-HKDevUITests.a */; };
 		ADA0DE0DD43E52305E262AD6 /* libPods-HKDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC39CF9E5F7216A41BBC7C7A /* libPods-HKDev.a */; };
 		DAA345184214F1F5E72538AD /* libPods-HKDevTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E6915CB48F10B18FB5B1A1E /* libPods-HKDevTests.a */; };
@@ -58,6 +65,20 @@
 		460EE7AF224A0F1A0076FBD4 /* HKDevUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKDevUITests.m; sourceTree = "<group>"; };
 		460EE7B1224A0F1A0076FBD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EE7BE224A0F690076FBD4 /* Memo.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Memo.md; sourceTree = "<group>"; };
+		460EE7C1224A147D0076FBD4 /* HKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKTabBarController.h; sourceTree = "<group>"; };
+		460EE7C2224A147D0076FBD4 /* HKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKTabBarController.m; sourceTree = "<group>"; };
+		460EE7C3224A147D0076FBD4 /* HKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKViewController.m; sourceTree = "<group>"; };
+		460EE7C4224A147D0076FBD4 /* HKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKViewController.h; sourceTree = "<group>"; };
+		460EE7C5224A147D0076FBD4 /* HKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKNavigationController.h; sourceTree = "<group>"; };
+		460EE7C6224A147D0076FBD4 /* HKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKNavigationController.m; sourceTree = "<group>"; };
+		460EE7CB224A17FC0076FBD4 /* HKVideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKVideoListViewController.m; sourceTree = "<group>"; };
+		460EE7CC224A17FC0076FBD4 /* HKPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKPlayerViewController.h; sourceTree = "<group>"; };
+		460EE7CD224A17FC0076FBD4 /* HKPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKPlayerViewController.m; sourceTree = "<group>"; };
+		460EE7CE224A17FC0076FBD4 /* HKVideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKVideoListViewController.h; sourceTree = "<group>"; };
+		460EE7D2224A18080076FBD4 /* HKRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKRecorderViewController.m; sourceTree = "<group>"; };
+		460EE7D3224A18080076FBD4 /* HKPrepareRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKPrepareRecordViewController.m; sourceTree = "<group>"; };
+		460EE7D4224A18080076FBD4 /* HKRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKRecorderViewController.h; sourceTree = "<group>"; };
+		460EE7D5224A18080076FBD4 /* HKPrepareRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKPrepareRecordViewController.h; sourceTree = "<group>"; };
 		5D6F47923EA457AEE66B2572 /* Pods-HKDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HKDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-HKDev/Pods-HKDev.release.xcconfig"; sourceTree = "<group>"; };
 		646B07A2645ABE317CAD8F28 /* Pods-HKDevUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HKDevUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HKDevUITests/Pods-HKDevUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E6915CB48F10B18FB5B1A1E /* libPods-HKDevTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HKDevTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				460EE787224A0F180076FBD4 /* HKDev */,
+				460EE7BD224A0F520076FBD4 /* Memo */,
 				460EE7A3224A0F1A0076FBD4 /* HKDevTests */,
 				460EE7AE224A0F1A0076FBD4 /* HKDevUITests */,
 				460EE786224A0F180076FBD4 /* Products */,
@@ -121,16 +143,12 @@
 		460EE787224A0F180076FBD4 /* HKDev */ = {
 			isa = PBXGroup;
 			children = (
-				460EE7BD224A0F520076FBD4 /* Memo */,
-				460EE788224A0F180076FBD4 /* AppDelegate.h */,
-				460EE789224A0F180076FBD4 /* AppDelegate.m */,
-				460EE78B224A0F180076FBD4 /* ViewController.h */,
-				460EE78C224A0F180076FBD4 /* ViewController.m */,
-				460EE78E224A0F180076FBD4 /* Main.storyboard */,
+				460EE7BF224A13200076FBD4 /* Application */,
+				460EE7D1224A18080076FBD4 /* RecorderModule */,
+				460EE7CA224A17FC0076FBD4 /* PlayerModule */,
+				460EE7C0224A14600076FBD4 /* BaseController */,
 				460EE794224A0F1A0076FBD4 /* Assets.xcassets */,
-				460EE796224A0F1A0076FBD4 /* LaunchScreen.storyboard */,
 				460EE799224A0F1A0076FBD4 /* Info.plist */,
-				460EE79A224A0F1A0076FBD4 /* main.m */,
 				460EE791224A0F180076FBD4 /* HKDev.xcdatamodeld */,
 			);
 			path = HKDev;
@@ -160,6 +178,55 @@
 				460EE7BE224A0F690076FBD4 /* Memo.md */,
 			);
 			path = Memo;
+			sourceTree = "<group>";
+		};
+		460EE7BF224A13200076FBD4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				460EE79A224A0F1A0076FBD4 /* main.m */,
+				460EE78B224A0F180076FBD4 /* ViewController.h */,
+				460EE78C224A0F180076FBD4 /* ViewController.m */,
+				460EE78E224A0F180076FBD4 /* Main.storyboard */,
+				460EE796224A0F1A0076FBD4 /* LaunchScreen.storyboard */,
+				460EE788224A0F180076FBD4 /* AppDelegate.h */,
+				460EE789224A0F180076FBD4 /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		460EE7C0224A14600076FBD4 /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				460EE7C5224A147D0076FBD4 /* HKNavigationController.h */,
+				460EE7C6224A147D0076FBD4 /* HKNavigationController.m */,
+				460EE7C1224A147D0076FBD4 /* HKTabBarController.h */,
+				460EE7C2224A147D0076FBD4 /* HKTabBarController.m */,
+				460EE7C4224A147D0076FBD4 /* HKViewController.h */,
+				460EE7C3224A147D0076FBD4 /* HKViewController.m */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		460EE7CA224A17FC0076FBD4 /* PlayerModule */ = {
+			isa = PBXGroup;
+			children = (
+				460EE7CB224A17FC0076FBD4 /* HKVideoListViewController.m */,
+				460EE7CC224A17FC0076FBD4 /* HKPlayerViewController.h */,
+				460EE7CD224A17FC0076FBD4 /* HKPlayerViewController.m */,
+				460EE7CE224A17FC0076FBD4 /* HKVideoListViewController.h */,
+			);
+			path = PlayerModule;
+			sourceTree = "<group>";
+		};
+		460EE7D1224A18080076FBD4 /* RecorderModule */ = {
+			isa = PBXGroup;
+			children = (
+				460EE7D2224A18080076FBD4 /* HKRecorderViewController.m */,
+				460EE7D3224A18080076FBD4 /* HKPrepareRecordViewController.m */,
+				460EE7D4224A18080076FBD4 /* HKRecorderViewController.h */,
+				460EE7D5224A18080076FBD4 /* HKPrepareRecordViewController.h */,
+			);
+			path = RecorderModule;
 			sourceTree = "<group>";
 		};
 		51AFCF9325CD5A20572D4E26 /* Frameworks */ = {
@@ -387,10 +454,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460EE7C7224A147D0076FBD4 /* HKTabBarController.m in Sources */,
+				460EE7D7224A18080076FBD4 /* HKPrepareRecordViewController.m in Sources */,
 				460EE793224A0F180076FBD4 /* HKDev.xcdatamodeld in Sources */,
 				460EE78D224A0F180076FBD4 /* ViewController.m in Sources */,
+				460EE7D6224A18080076FBD4 /* HKRecorderViewController.m in Sources */,
+				460EE7CF224A17FC0076FBD4 /* HKVideoListViewController.m in Sources */,
+				460EE7C8224A147D0076FBD4 /* HKViewController.m in Sources */,
 				460EE79B224A0F1A0076FBD4 /* main.m in Sources */,
 				460EE78A224A0F180076FBD4 /* AppDelegate.m in Sources */,
+				460EE7D0224A17FC0076FBD4 /* HKPlayerViewController.m in Sources */,
+				460EE7C9224A147D0076FBD4 /* HKNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,12 +637,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C8439L29Q;
 				INFOPLIST_FILE = HKDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hk.dev.HKDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.migu.liveshowdev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,12 +656,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C8439L29Q;
 				INFOPLIST_FILE = HKDev/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hk.dev.HKDev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.migu.liveshowdev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

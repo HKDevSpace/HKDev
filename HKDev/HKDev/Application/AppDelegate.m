@@ -8,18 +8,27 @@
 
 #import "AppDelegate.h"
 
+#import "HKNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+#pragma mark - Life Cycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    HKHomeViewController *homeVC = [[HKHomeViewController alloc] init];
+//    window.rootViewController = [[HKNavigationController alloc] initWithRootViewController:homeVC];
+//    [window makeKeyAndVisible];
+//    self.window = window;
+//    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -50,32 +59,51 @@
 }
 
 
+#pragma mark - Rotate
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+
+#pragma mark - Private
+
+
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
 
-- (NSPersistentContainer *)persistentContainer {
+- (NSPersistentContainer *)persistentContainer  API_AVAILABLE(ios(10.0)){
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"HKDev"];
-            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
-                if (error != nil) {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
-                    /*
-                     Typical reasons for an error here include:
-                     * The parent directory does not exist, cannot be created, or disallows writing.
-                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                     * The device is out of space.
-                     * The store could not be migrated to the current model version.
-                     Check the error message to determine what the actual problem was.
-                    */
-                    NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                    abort();
-                }
-            }];
+            if (@available(iOS 10.0, *)) {
+                _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"HKDev"];
+            } else {
+                // Fallback on earlier versions
+            }
+            if (@available(iOS 10.0, *)) {
+                [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
+                    if (error != nil) {
+                        // Replace this implementation with code to handle the error appropriately.
+                        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                        
+                        /*
+                         Typical reasons for an error here include:
+                         * The parent directory does not exist, cannot be created, or disallows writing.
+                         * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                         * The device is out of space.
+                         * The store could not be migrated to the current model version.
+                         Check the error message to determine what the actual problem was.
+                         */
+                        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                        abort();
+                    }
+                }];
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     
