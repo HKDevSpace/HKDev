@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HKRecorderViewController : HKViewController
+@interface LSRecorderViewController : HKViewController
 
+
+- (instancetype)initWithLandscape:(BOOL)landscape;
 
 @end
 

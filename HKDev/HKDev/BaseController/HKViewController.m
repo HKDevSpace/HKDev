@@ -21,13 +21,27 @@
     
     // Set Background Color (WhiteColor)
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self hideNavigationBackButtonTitle];
+
 }
 
-#pragma mark - Rotate Control
-// 默认不支持旋转
+
+#pragma mark - Private
+
+// 隐藏返回按钮标题
+- (void)hideNavigationBackButtonTitle
+{
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backItem;
+}
+
+
+
+#pragma mark - Autorotate
 - (BOOL)shouldAutorotate
 {
-    return NO;
+    return YES;
 }
 
 // 默认只支持竖屏

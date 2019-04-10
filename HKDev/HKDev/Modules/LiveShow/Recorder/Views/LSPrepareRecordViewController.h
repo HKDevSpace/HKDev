@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HKPrepareRecordViewController : HKViewController
+@interface LSPrepareRecordViewController : HKViewController
 
 @end
 

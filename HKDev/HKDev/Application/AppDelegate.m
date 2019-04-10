@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AppInitializer.h"
 
-#import "HKNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -21,12 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    HKHomeViewController *homeVC = [[HKHomeViewController alloc] init];
-//    window.rootViewController = [[HKNavigationController alloc] initWithRootViewController:homeVC];
-//    [window makeKeyAndVisible];
-//    self.window = window;
-//    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    window.rootViewController = [AppInitializer rootViewController];
+    [window makeKeyAndVisible];
+    self.window = window;
+
     return YES;
 }
 
@@ -61,13 +60,17 @@
 
 #pragma mark - Rotate
 
+
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
-    return UIInterfaceOrientationMaskAllButUpsideDown;
+    UIInterfaceOrientationMask mask = [application.keyWindow.rootViewController supportedInterfaceOrientations];
+    NSLog(@"App Key Window Mask [%d]", (int)mask);
+    return mask;
 }
 
 
 #pragma mark - Private
+
 
 
 #pragma mark - Core Data stack

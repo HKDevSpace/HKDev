@@ -17,23 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBar.translucent = NO;
+    
 }
 
-
-#pragma mark - Rotate Control
-- (BOOL)shouldAutorotate
-{
-    return [self.selectedViewController shouldAutorotate];
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return [self.selectedViewController supportedInterfaceOrientations];
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return [self.selectedViewController preferredInterfaceOrientationForPresentation];
-}
 
 @end

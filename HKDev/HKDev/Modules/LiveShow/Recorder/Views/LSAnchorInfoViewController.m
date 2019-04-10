@@ -1,22 +1,22 @@
 //
-//  HKRecorderViewController.m
-//  HKScreenRotateDev
+//  LSAnchorInfoViewController.m
+//  HKDev
 //
-//  Created by HK on 2019/3/26.
+//  Created by HK on 2019/3/29.
 //  Copyright © 2019 HK. All rights reserved.
 //
 
-#import "HKRecorderViewController.h"
+#import "LSAnchorInfoViewController.h"
 
-@interface HKRecorderViewController ()
+@interface LSAnchorInfoViewController ()
 
 @end
 
-@implementation HKRecorderViewController
+@implementation LSAnchorInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 /*
