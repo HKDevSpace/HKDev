@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HKViewController : UIViewController
 
+@property (strong, nonatomic, readonly) UIImageView *backgourdImageView;
+
+
+
+- (CGFloat)navigationBarHeight;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

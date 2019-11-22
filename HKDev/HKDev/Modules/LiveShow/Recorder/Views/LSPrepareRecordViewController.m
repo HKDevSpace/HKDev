@@ -84,9 +84,13 @@
         // present
         LSRecorderViewController *recorderVC = [[LSRecorderViewController alloc] initWithLandscape:self.isLandscape];
         HKNavigationController *nav = [[HKNavigationController alloc] initWithRootViewController:recorderVC];
-        [self presentViewController:nav animated:NO completion:^{ }];
+        
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:YES completion:^{
+            
+        }];
+        
+//        [self presentViewController:nav animated:NO completion:^{ }];
     }
-
 }
 
 

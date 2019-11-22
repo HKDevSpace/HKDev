@@ -1,26 +1,61 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - CTMediator (25)
+  - HKCategories (0.1.0)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.0)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - AFNetworking
+  - CTMediator
+  - HKCategories (from `../../HKFoundation/HKCategories`)
   - Masonry
   - ReactiveObjC
+  - SDWebImage
   - YYKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CTMediator
     - Masonry
     - ReactiveObjC
+    - SDWebImage
     - YYKit
 
+EXTERNAL SOURCES:
+  HKCategories:
+    :path: "../../HKFoundation/HKCategories"
+
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
+  HKCategories: cb9d3086a4e7ed1f73d6c45e1e576438a77fc467
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fad5252270a285cbd48e4ef47e134c204e885790
+PODFILE CHECKSUM: e5feb9f632fba04caaa60de0284266aed31dc4ba
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

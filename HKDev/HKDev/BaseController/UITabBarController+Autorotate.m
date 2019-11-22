@@ -27,4 +27,11 @@
     return [self.selectedViewController preferredInterfaceOrientationForPresentation];
 }
 
+
+#pragma mark - Override
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [self.selectedViewController preferredStatusBarStyle];
+}
+
 @end

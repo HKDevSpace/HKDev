@@ -9,15 +9,21 @@
 #import "HKEntryListViewController.h"
 #import "LSEntryViewController.h"
 #import "HKTestListViewController.h"
+#import "HKBannerViewController.h"
+#import "HKVideoListViewController.h"
+
 #import "HKEntryTableViewCell.h"
 #import "HKTestListManager.h"
+
+#import <Masonry.h>
 
 
 static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 
-@interface HKEntryListViewController ()
+@interface HKEntryListViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) HKEntryListManager *manager;
 
 @end
@@ -33,11 +39,23 @@ static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
     return self;
 }
 
+- (void)volumeChanged:(id)no
+{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(volumeChanged:)
+                                                 name:@"AVSystemController_SystemVolumeDidChangeNotification"
+                                               object:nil];
+    
     self.title = self.manager.title;
     [self setupTableView];
+    
+    [self.tableView reloadData];
     
 }
 
@@ -62,6 +80,7 @@ static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
     cell.titleLabel.text = item.title;
     cell.descLabel.text = item.desc;
 
+    
     return cell;
 }
 
@@ -77,6 +96,18 @@ static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
         case HKEntryTypeLiveShow: {
             LSEntryViewController *liveShowEntryVC = [[LSEntryViewController alloc] init];
             targetViewController = liveShowEntryVC;
+        } break;
+        case HKEntryTypeVOD: {
+            HKVideoListViewController *videoListVC = [[HKVideoListViewController alloc] init];
+            targetViewController = videoListVC;
+        } break;
+        case HKEntryTypeBanner: {         // 轮播
+            HKBannerViewController *bannerVC = [[HKBannerViewController alloc] init];
+            targetViewController = bannerVC;
+        } break;
+        case HKEntryTypePhotoPicker: {    // 相册选择器
+        } break;
+        case HKEntryTypeInputTextView: {  // 输入框
         } break;
             
         case HKEntryTypeNSFoundation:    // <Foundation> 框架
@@ -102,7 +133,12 @@ static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
 #pragma mark - Private
 - (void)setupTableView
 {
-    self.tableView.contentInset = UIEdgeInsetsMake(5.f, 0.f, 0.f, 0.f);
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake([self navigationBarHeight] + 5.f, 0, 0, 0));
+    }];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0.f, 0.f, 0.f, 0.f);
     self.tableView.estimatedRowHeight = 50.f;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.tableFooterView = [[UIView alloc] init];
@@ -110,14 +146,17 @@ static NSString *const kCellReuseIdentifier = @"kCellReuseIdentifier";
     [self.tableView registerClass:[HKEntryTableViewCell class] forCellReuseIdentifier:kCellReuseIdentifier];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Getter
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+    }
+    return _tableView;
 }
-*/
+
 
 @end

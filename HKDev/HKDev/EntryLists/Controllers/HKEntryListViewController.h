@@ -6,12 +6,12 @@
 //  Copyright © 2019 HK. All rights reserved.
 //
 
-#import "HKTableViewController.h"
+#import "HKViewController.h"
 #import "HKEntryListManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HKEntryListViewController : HKTableViewController
+@interface HKEntryListViewController : HKViewController
 
 - (instancetype)initWithManager:(HKEntryListManager *)manager;
 

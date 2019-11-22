@@ -13,6 +13,7 @@
 @interface HKEntryTableViewCell ()
 
 @property (strong, nonatomic) UIView *cardView;
+@property (strong, nonatomic) UIImageView *cardBackgroundImageView;
 @property (strong, nonatomic) UIImageView *detailArrowImageView;
 
 @end
@@ -43,12 +44,17 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [self.contentView addSubview:self.cardView];
+    [self.contentView addSubview:self.cardBackgroundImageView];
     [self.cardView addSubview:self.titleLabel];
     [self.cardView addSubview:self.descLabel];
     [self.cardView addSubview:self.detailArrowImageView];
     
     [self.cardView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(5, 10, 5, 10));
+        make.edges.equalTo(self.contentView).with.insets(UIEdgeInsetsMake(5, 12, 5, 12));
+    }];
+    
+    [self.cardBackgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.cardView);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,7 +84,8 @@
 {
     if (!_cardView) {
         _cardView = [[UIView alloc] init];
-        _cardView.backgroundColor = [UIColor whiteColor];
+        _cardView.backgroundColor = [UIColor clearColor];
+        _cardView.clipsToBounds = YES;
         _cardView.layer.shadowColor = [UIColor blackColor].CGColor;
         _cardView.layer.shadowOffset = CGSizeMake(2, 2);
         _cardView.layer.shadowRadius = 2.f;
@@ -87,12 +94,23 @@
     return _cardView;
 }
 
+- (UIImageView *)cardBackgroundImageView
+{
+    if (!_cardBackgroundImageView) {
+        _cardBackgroundImageView = [[UIImageView alloc] init];
+        _cardBackgroundImageView.clipsToBounds = YES;
+        _cardBackgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _cardBackgroundImageView.image = [UIImage imageNamed:@"EntryCardBackground"];
+    }
+    return _cardBackgroundImageView;
+}
+
 - (UILabel *)titleLabel
 {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont systemFontOfSize:14.f];
-        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.textColor = [UIColor whiteColor];
         _titleLabel.text = @"-";
     }
     return _titleLabel;

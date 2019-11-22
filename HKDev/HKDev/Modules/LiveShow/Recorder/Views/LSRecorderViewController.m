@@ -8,6 +8,7 @@
 
 #import "LSRecorderViewController.h"
 #import "LSAnchorInfoViewController.h"
+#import "UIViewController+Autorotate.h"
 
 #import "UIDevice+HKExtension.h"
 #import <Masonry.h>
@@ -35,8 +36,14 @@
         _landscape = landscape;
         if (landscape) {
             supportedOrientationMask = UIInterfaceOrientationMaskLandscapeLeft;
+            self.hk_supportedInterface = UIInterfaceOrientationMaskLandscapeLeft;
+            self.hk_preferredInterfaceForPresentation = UIInterfaceOrientationLandscapeLeft;
+            self.hk_autorotate = YES;
         } else {
             supportedOrientationMask = UIInterfaceOrientationMaskPortrait;
+            self.hk_supportedInterface = UIInterfaceOrientationMaskPortrait;
+            self.hk_preferredInterfaceForPresentation = UIInterfaceOrientationPortrait;
+            self.hk_autorotate = NO;
         }
     }
     
@@ -105,24 +112,24 @@
 }
 
 #pragma mark - Rotate
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return supportedOrientationMask;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    if (self.isLandscape) {
-        return UIInterfaceOrientationLandscapeLeft;
-    } else {
-        return UIInterfaceOrientationPortrait;
-    }
-}
+//- (BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+//{
+//    return supportedOrientationMask;
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+//{
+//    if (self.isLandscape) {
+//        return UIInterfaceOrientationLandscapeLeft;
+//    } else {
+//        return UIInterfaceOrientationPortrait;
+//    }
+//}
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {

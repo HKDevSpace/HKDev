@@ -10,6 +10,9 @@
 #import "AppInitializer.h"
 
 
+#define InitializationWithStoryBoard 0
+
+
 @interface AppDelegate ()
 
 @end
@@ -18,14 +21,25 @@
 
 #pragma mark - Life Cycle
 
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    
+#if InitializationWithStoryBoard == 0
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     window.rootViewController = [AppInitializer rootViewController];
     [window makeKeyAndVisible];
     self.window = window;
+    
+#endif
 
+   
+    
     return YES;
 }
 
@@ -64,7 +78,6 @@
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
     UIInterfaceOrientationMask mask = [application.keyWindow.rootViewController supportedInterfaceOrientations];
-    NSLog(@"App Key Window Mask [%d]", (int)mask);
     return mask;
 }
 

@@ -58,18 +58,19 @@
     switch (self.type) {
         case HKEntryListTypeModules:
             _title = @"Modules";
-            _imageName = @"";
-            _selectedImageName = @"";
+            _imageName = @"TabBarModule";
+            _selectedImageName = @"TabBarModuleSelected";
+//            _selectedImageName = @"TabBarModuleSelected";
             break;
         case HKEntryListTypeComponents:
             _title = @"Components";
-            _imageName = @"";
-            _selectedImageName = @"";
+            _imageName = @"TabBarComponent";
+            _selectedImageName = @"TabBarComponentSelected";
             break;
         case HKEntryListTypeFoundations:
             _title = @"Foundations";
-            _imageName = @"";
-            _selectedImageName = @"";
+            _imageName = @"TabBarFoundation";
+            _selectedImageName = @"TabBarFoundationSelected";
             break;
         default:
             break;

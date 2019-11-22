@@ -18,13 +18,19 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    NSLog(@"VisibleViewController :%@", self.visibleViewController);
     return [self.visibleViewController supportedInterfaceOrientations];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return [self.visibleViewController preferredInterfaceOrientationForPresentation];
+}
+
+
+#pragma mark - Override
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [self.visibleViewController preferredStatusBarStyle];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "LSEntryViewController.h"
 #import "LSPrepareRecordViewController.h"
 
+#import "UIDevice+HKExtension.h"
 #import <Masonry.h>
 
 @interface LSEntryViewController ()
@@ -55,7 +56,7 @@
     
     [self.view addSubview:self.recordButton];
     [self.recordButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).with.offset(20.f);
+        make.top.equalTo(self.view).with.offset(64.f + 20.f + ([UIDevice isNotchScreen] ? 24.f : 0.f));
         make.left.equalTo(self.view).with.offset(20.f);
         make.right.equalTo(self.view.mas_centerX).with.offset(-10.f);
     }];
@@ -67,9 +68,12 @@
 {
     if (!_recordButton) {
         _recordButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _recordButton.backgroundColor = [UIColor yellowColor];
         [_recordButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
         [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
+        [_recordButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _recordButton.layer.borderColor = [UIColor colorWithWhite:1 alpha:0.7].CGColor;
+        _recordButton.layer.borderWidth = 0.5;
+        _recordButton.layer.cornerRadius = 3.f;
         [_recordButton addTarget:self action:@selector(recordAction) forControlEvents:UIControlEventTouchUpInside];
     }
     

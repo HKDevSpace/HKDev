@@ -6,9 +6,9 @@
 //  Copyright © 2019 HK. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HKViewController.h"
 
-@interface HKPlayerViewController : UIViewController
+@interface HKPlayerViewController : HKViewController
 
 
 @end
